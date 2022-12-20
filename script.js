@@ -35,14 +35,36 @@ function checkWinner(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = getPlayerChoice();
-  computerSelection = getComputerChoice();
-  const result = checkWinner(playerSelection, computerSelection);
-  if (result == "tie") {
-    console.log("It was a tie!");
-  } else if (result == "player") {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
+  const results = checkWinner(playerSelection, computerSelection);
+  if (results == "tie") {
+    return "It's a tie!";
+  } else if (results == "player") {
+    return `You win! ${playerSelection} beats ${computerSelection}!`;
   } else {
-    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
   }
 }
+
+function game() {
+  let scorePlayer = 0;
+  let scoreComputer = 0;
+  for (let i = 0; i < 5; i++) {
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    if (checkWinner(playerSelection, computerSelection) == "player") {
+      scorePlayer++;
+    } else if (checkWinner(playerSelection, computerSelection)) {
+      scoreComputer++;
+    }
+  }
+  if (scorePlayer > scoreComputer) {
+    console.log("Player is the Winner!");
+  } else if (scorePlayer < scoreComputer) {
+    console.log("Computer is the Winner!");
+  } else {
+    console.log("It was a tie!");
+  }
+}
+
+game();
