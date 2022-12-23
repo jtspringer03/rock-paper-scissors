@@ -35,39 +35,42 @@ function playRound(playerSelection, computerSelection) {
 
 // Borders
 document.querySelector("#results1").style.borderStyle = "solid";
+document.querySelector("#score-holder").style.borderStyle = "solid";
+document.querySelector("#score-holder-player").style.borderStyle = "solid";
+document.querySelector("#score-holder-computer").style.borderStyle = "solid";
 document.querySelector("#player-score").style.borderStyle = "solid";
 document.querySelector("#computer-score").style.borderStyle = "solid";
 
 // Button Clicks
 document.querySelector("#button-rock").addEventListener("click", function () {
-  document.getElementById("results1").textContent = playRound("rock", getComputerChoice());
-  document.getElementById("player-score").textContent = playerScore;
-  document.getElementById("computer-score").textContent = computerScore;
+  document.getElementById("score-holder").textContent = playRound("rock", getComputerChoice());
+  document.getElementById("score-holder-player").textContent = playerScore;
+  document.getElementById("score-holder-computer").textContent = computerScore;
   if (playerScore == 5) {
-    document.getElementById("results1").textContent = "Player is the Winner!";
+    document.getElementById("score-holder").textContent = "Player is the Winner!";
   } else if (computerScore == 5) {
-    document.getElementById("results1").textContent = "Computer is the Winner!";
+    document.getElementById("score-holder").textContent = "Computer is the Winner!";
   }
 });
 
 document.querySelector("#button-paper").addEventListener("click", function () {
-  document.getElementById("results1").textContent = playRound("paper", getComputerChoice());
-  document.getElementById("player-score").textContent = playerScore;
-  document.getElementById("computer-score").textContent = computerScore;
+  document.getElementById("score-holder").textContent = playRound("paper", getComputerChoice());
+  document.getElementById("score-holder-player").textContent = playerScore;
+  document.getElementById("score-holder-computer").textContent = computerScore;
   if (playerScore == 5) {
-    document.getElementById("results1").textContent = "Player is the Winner!";
+    document.getElementById("score-holder").textContent = "Player is the Winner!";
   } else if (computerScore == 5) {
-    document.getElementById("results1").textContent = "Computer is the Winner!";
+    document.getElementById("score-holder").textContent = "Computer is the Winner!";
   }
 });
 
 document.querySelector("#button-scissors").addEventListener("click", function () {
-  document.getElementById("results1").textContent = playRound("scissors", getComputerChoice());
-  document.getElementById("player-score").textContent = playerScore;
-  document.getElementById("computer-score").textContent = computerScore;
+  document.getElementById("score-holder").textContent = playRound("scissors", getComputerChoice());
+  document.getElementById("score-holder-player").textContent = playerScore;
+  document.getElementById("score-holder-computer").textContent = computerScore;
   if (playerScore == 5) {
-    document.getElementById("results1").textContent = "Player is the Winner!";
+    document.getElementById("score-holder").textContent = "Player is the Winner!";
   } else if (computerScore == 5) {
-    document.getElementById("results1").textContent = "Computer is the Winner!";
+    document.getElementById("score-holder").textContent = "Computer is the Winner!";
   }
 });
